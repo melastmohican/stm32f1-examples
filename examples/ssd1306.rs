@@ -1,7 +1,7 @@
 #![no_std]
 #![no_main]
 
-use cortex_m_rt::{entry};
+use cortex_m_rt::entry;
 use embedded_graphics::{
     image::{Image, ImageRaw},
     pixelcolor::BinaryColor,
@@ -9,8 +9,11 @@ use embedded_graphics::{
 };
 use panic_halt as _;
 use ssd1306::{prelude::*, I2CDisplayInterface, Ssd1306};
-use stm32f1xx_hal::{i2c::{BlockingI2c, DutyCycle, Mode}, pac, prelude::*};
-
+use stm32f1xx_hal::{
+    i2c::{BlockingI2c, DutyCycle, Mode},
+    pac,
+    prelude::*,
+};
 
 #[entry]
 fn main() -> ! {
@@ -58,4 +61,3 @@ fn main() -> ! {
 
     loop {}
 }
-

@@ -13,8 +13,8 @@ use cortex_m::asm;
 use cortex_m_rt::entry;
 use cortex_m_semihosting::{hprint, hprintln};
 
-use stm32f1xx_hal::{self as hal, pac, prelude::*};
 use stm32f1xx_hal::i2c::{BlockingI2c, DutyCycle, Error, Mode};
+use stm32f1xx_hal::{self as hal, pac, prelude::*};
 
 const VALID_ADDR_RANGE: Range<u8> = 0x08..0x7F;
 
@@ -67,8 +67,6 @@ fn main() -> ! {
 
     hprintln!();
     hprintln!("Done!");
-
-
 
     loop {
         asm::wfi();

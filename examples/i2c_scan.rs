@@ -9,7 +9,7 @@ use stm32f1xx_hal::{
     gpio::GpioExt,
     i2c::{BlockingI2c, DutyCycle, Mode},
     pac,
-    prelude::*
+    prelude::*,
 };
 
 #[entry]

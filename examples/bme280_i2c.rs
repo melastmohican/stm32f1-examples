@@ -78,7 +78,6 @@ fn main() -> ! {
             1000,
         );
 
-    
     let mut delay = cp.SYST.delay(&clocks);
     // The Adafruit boards have address 0x77 without closing the jumper on the back, the BME280 lib connects to 0x77 with `new_secondary`, use
     // `new_primary` for 0x76 if you close the jumper/solder bridge.

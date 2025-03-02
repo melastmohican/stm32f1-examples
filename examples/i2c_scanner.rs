@@ -57,7 +57,6 @@ fn main() -> ! {
             1000,
         );
 
-
     hprintln!("Start i2c scanning...");
     // I2C addresses are typically 7 bits long, 0..127
     for address in 0..=127 {
