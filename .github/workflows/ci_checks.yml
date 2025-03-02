@@ -16,6 +16,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - uses: dtolnay/rust-toolchain@stable
+      with:
+          target: thumbv7m-none-eabi
     - name: Build
       run: cargo build --verbose
     - name: Run tests
@@ -30,7 +33,7 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: clippy
-          target: thumbv6m-none-eabi
+          target: thumbv7m-none-eabi
       - run: cargo clippy --all-features -- --deny=warnings
   formatting:
     name: Formatting
@@ -42,5 +45,5 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: rustfmt
-          target: thumbv6m-none-eabi
+          target: thumbv7m-none-eabi
       - run: cargo fmt -- --check
